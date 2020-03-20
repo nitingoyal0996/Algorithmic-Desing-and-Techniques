@@ -1,4 +1,3 @@
-'''
 ### Problem Statement:
 
 Maximum Pairwise Product Problem
@@ -9,11 +8,9 @@ integers.
 Output: The maximum value that
 can be obtained by multiplying
 two different elements from the sequence
-'''
 
-'''
+
 ### Stress Test:
-
 A stress test consists of four parts:
 1. Your implementation of an algorithm.
 2. An alternative, trivial and slow, but correct implementation of an
@@ -23,11 +20,9 @@ algorithm for the same problem.
 implementations to compare the results. If their results differ, the
 test and both answers are output, and the program stops, otherwise
 the loop repeats.
-'''
 
-'''
+
 ### Deterministic Programs vs Non-Deterministic programs:
-
 Note that our solutions worked and then failed on exactly the same
 test cases as on the previous run of the stress test, because we didn’t
 change anything in the test generator. The numbers it uses to generate
@@ -37,7 +32,7 @@ a convenient and important property, and you should try to have your
 programs exhibit such behavior, because deterministic programs (that al-
 ways give the same result for the same input) are easier to debug than
 non-deterministic ones.
-'''
+
 
 ### Exercise Break Question:
 For now I'm mentioning these questions here. I'll put the solutions very soon.
