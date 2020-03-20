@@ -41,5 +41,6 @@ For now I'm mentioning these questions here. I'll put the solutions very soon.
 2. Find two largest elements in an array in n + [log 2 n] − 2 comparisons.
 
 if you think previous exercise was easy, here are next two challenges that you may face:
+
 3. Prove that no algorithm for finding two largest elements in an array can do this in less than n + [log 2 n] − 2 comparisons.
 4. What is the fastest algorithm for finding three largest elements?
