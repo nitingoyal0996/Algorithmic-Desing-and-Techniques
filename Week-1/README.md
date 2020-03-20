@@ -3,15 +3,22 @@
 Maximum Pairwise Product Problem
 Find the maximum product of two distinct numbers
 in a sequence of non-negative integers.
-Input: A sequence of non-negative
+
+Input: 
+
+A sequence of non-negative
 integers.
-Output: The maximum value that
+
+Output: 
+
+The maximum value that
 can be obtained by multiplying
 two different elements from the sequence
 
 
 ### Stress Test:
 A stress test consists of four parts:
+
 1. Your implementation of an algorithm.
 2. An alternative, trivial and slow, but correct implementation of an
 algorithm for the same problem.
