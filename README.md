@@ -1,2 +1,2 @@
-# Algorithmic-Desing-and-Techniques
-Algorithmic Desing and Techniques - Programming Assignments
+# Algorithmic-Desing-and-Techniques - edx Micromasters
+Algorithmic Desing and Techniques - Study Material and Programming Assignment Repositories.
