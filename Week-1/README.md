@@ -48,3 +48,17 @@ if you think previous exercise was easy, here are next two challenges that you m
 
 3. Prove that no algorithm for finding two largest elements in an array can do this in less than n + [log 2 n] − 2 comparisons.
 4. What is the fastest algorithm for finding three largest elements?
+
+### More Compact Algorithm
+The Maximum Pairwise Product Problem can be solved by the following
+compact algorithm that uses sorting (in non-decreasing order).
+
+    MaxPairwiseProductBySorting(A[1 . . . n]):
+    Sort(A)
+    return A[n − 1] · A[n]
+
+This algorithm does more than we actually need: 
+    instead of finding two
+largest elements, it sorts the entire array. For this reason, its running time
+is O(n log n), but not O(n). Still, for the given constraints (2 ≤ n ≤ 2 · 10 5 )
+this is usually sufficiently fast to fit into a second and pass our grader.
