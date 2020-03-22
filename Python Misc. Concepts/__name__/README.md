@@ -61,3 +61,6 @@ You get,
     two.py is being run directly
 
 Thus, when module one gets loaded, its __name__ equals "one" instead of "__main__".
+
+
+REF: https://stackoverflow.com/questions/419163/what-does-if-name-main-do
