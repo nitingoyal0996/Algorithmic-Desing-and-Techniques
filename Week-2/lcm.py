@@ -32,7 +32,9 @@ def gcdFast(a,b):
         return gcdFast(b, a%b)
 
 def lcmFast(a,b):
-    lcm = int(a*b / gcdFast(a,b))
+    prod = a*b
+    gcd = gcdFast(a,b)
+    lcm = prod // gcd
     return lcm
 
 # Deliver Method

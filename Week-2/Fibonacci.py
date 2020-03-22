@@ -41,7 +41,6 @@ def FibFast(n):
 # Deliver Method
 n = int(input())
 print(FibFast(n))
-# print(FibNaive(n))
 
 # Stress Test
 '''
