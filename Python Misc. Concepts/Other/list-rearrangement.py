@@ -1,8 +1,7 @@
 '''
 Aim: to rearrange lists on the basis of an already sorted list
-
-Sorted list should contain a key element, so that rearrange can take place.
-To achieve that tuple is being used.
+    Sorted list should contain a key element, so that rearrange can take place.
+    To achieve that tuple is being used.
 '''
 # Define lists
 v = [8,5,6]

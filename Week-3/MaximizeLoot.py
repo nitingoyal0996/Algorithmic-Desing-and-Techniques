@@ -53,8 +53,10 @@ def knapsackFast(W, weights, values):
     totalValue = 0
     n = len(weights)
     # Sorting
-    valuePerUnitWeight = [(y,x,float(y/x)) for x,y in zip(w,v)]
+    valuePerUnitWeight = [(y,x,y/x) for x,y in zip(w,v)]
+    # print(valuePerUnitWeight)
     valuePerUnitWeight.sort(key= lambda tup: tup[2],reverse=True)
+    # print(valuePerUnitWeight)
     # Rearrangement
     values = [x for tup in valuePerUnitWeight for x in values if tup[0]==x]
     weights = [y for tup in valuePerUnitWeight for y in weights if tup[1]==y]
@@ -74,9 +76,9 @@ if __name__ == '__main__':
     w = []
     v = []
     while n>0:
-        (x,y) = map(int, input().split())
-        v.append(x) # weight
-        w.append(y) # value
+        x = input()
+        v.append(int(x.split()[0])) # weight
+        w.append(int(x.split()[1])) # value
         n -= 1
     # print(knapsack(W, w, v))
     print(knapsackFast(W,w,v))
