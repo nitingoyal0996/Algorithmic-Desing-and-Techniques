@@ -48,28 +48,55 @@ First sort the items with decreaing value per unit weight
 then choose which item to put into knapsack
 '''
 
+# Accepted solution (w/o any test case failure)
+
+def fractional_knapsack(value, weight, capacity):
+    # index = [0, 1, 2, ..., n - 1] for n items
+    index = list(range(len(value)))
+    # contains ratios of values to weight
+    ratio = [v/w for v, w in zip(value, weight)]
+    # index is sorted according to value-to-weight ratio in decreasing order
+    index.sort(key=lambda i: ratio[i], reverse=True)
+ 
+    max_value = 0
+    fractions = [0]*len(value)
+    for i in index:
+        if weight[i] <= capacity:
+            fractions[i] = 1
+            max_value += value[i]
+            capacity -= weight[i]
+        else:
+            fractions[i] = capacity/weight[i]
+            max_value += value[i]*capacity/weight[i]
+            break
+ 
+    return max_value
+
+# Had a failed test case on submission - couldn't find out why?!
+'''
 def knapsackFast(W, weights, values):
     # variable initialize
     totalValue = 0
     n = len(weights)
     # Sorting
-    valuePerUnitWeight = [(y,x,y/x) for x,y in zip(w,v)]
+    valuePerUnitWeight = [(y,x,y/x) for x,y in zip(weights,values)]
     # print(valuePerUnitWeight)
     valuePerUnitWeight.sort(key= lambda tup: tup[2],reverse=True)
     # print(valuePerUnitWeight)
     # Rearrangement
     values = [x for tup in valuePerUnitWeight for x in values if tup[0]==x]
     weights = [y for tup in valuePerUnitWeight for y in weights if tup[1]==y]
-    # iterate and select item from sorted list
+    # iterate and select item from sorted list until knapsack is full
     for i in range(0, n):
         if W == 0:
             return totalValue
-        a = min(weights[i], W)
-        totalValue += a*(float(values[i]/weights[i]))
-        weights[i] -= a
-        W -= a
+        else:
+            a = min(weights[i], W)
+            totalValue += a*(float(valuePerUnitWeight[i]))
+            weights[i] -= a
+            W -= a
     return totalValue
-
+'''
 
 if __name__ == '__main__':
     (n, W) =  map(int, input().split())
@@ -81,4 +108,5 @@ if __name__ == '__main__':
         w.append(int(x.split()[1])) # value
         n -= 1
     # print(knapsack(W, w, v))
-    print(knapsackFast(W,w,v))
+    # print(knapsackFast(W,w,v))
+    print(fractional_knapsack(v, w, W))
