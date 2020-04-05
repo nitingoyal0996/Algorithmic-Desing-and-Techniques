@@ -38,8 +38,8 @@ The basic solution is to have two loops and keep track of the maximum count for 
 
 #### Implementation:
 
-# Python 3 program to find Majority  
-# element in an array 
+    # Python 3 program to find Majority  
+    # element in an array 
 
     def findMajority(arr, n): 
     
