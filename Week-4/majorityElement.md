@@ -390,3 +390,5 @@ The idea is to sort the array. Sorting makes similar elements in the array adjac
     Sorting requires O(n log n) time complexity.
     Auxiliary Space : O(1).
     As no extra space is required.
+
+REF: https://www.geeksforgeeks.org/majority-element/
