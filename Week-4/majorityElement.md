@@ -1,5 +1,14 @@
+### Methods:
+1. Naive Nested Loops  - 0(n*2)
+2. Binary Search Tree  - 0(nlogn)
+3. Moore's Voting Algorithm - 0(n)
+4. Hashmaps - 0(n)
+5. Sorting - 0(nlogn)
+6. Divide & Conqure - 0(nlogn)
+
+
 ### Majority Element
-Write a function which takes an array and prints the majority element (if it exists), otherwise prints “No Majority Element”. A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element).
+Write a function which takes an array and prints the majority element (if it exists), otherwise prints “No Majority Element". A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element).
 Examples :
     Input : {3, 3, 4, 2, 4, 4, 2, 4, 4}
     Output : 4
@@ -21,11 +30,11 @@ Recommended: Please solve it on “PRACTICE ” first, before moving on to the s
 The basic solution is to have two loops and keep track of the maximum count for all different elements. If maximum count becomes greater than n/2 then break the loops and return the element having maximum count. If the maximum count doesn’t become more than n/2 then majority element doesn’t exist.
 
 #### Algorithm:
-    *Create a variable to store the max count, count = 0
-    *Traverse through the array from start to end.
-    *For every element in the array run another loop to find the count of similar elements in the given array.
-    *If the count is greater than the max count update the max count and store the index in another varaible.
-    *If the maximum count is greater than the half the size of the array, print the element. Else print there is no majority element.
+* Create a variable to store the max count, count = 0
+* Traverse through the array from start to end.
+* For every element in the array run another loop to find the count of similar elements in the given array.
+* If the count is greater than the max count update the max count and store the index in another varaible.
+* If the maximum count is greater than the half the size of the array, print the element. Else print there is no majority element.
 
 #### Implementation:
 
@@ -82,10 +91,10 @@ Output:
 Insert elements in BST one by one and if an element is already present then increment the count of the node. At any stage, if the count of a node becomes more than n/2 then return.
 
 #### Algorithm:
-    *Create a binary search tree, if same element is entered in the binary search tree the frequency of the node is increased.
-    *traverse the array and insert the element in the binary search tree.
-    *If the maximum frequency of any node is greater than the half the size of the array, then perform a inorder traversal and find the node with frequency greater than half
-    *Else print No majority Element.
+*   Create a binary search tree, if same element is entered in the binary search tree the frequency of the node is increased.
+*   traverse the array and insert the element in the binary search tree.
+*   If the maximum frequency of any node is greater than the half the size of the array, then perform a inorder traversal and find the node with frequency greater than half
+*   Else print No majority Element.
 
 #### Implementation:
     // C++ program to demonstrate insert operation in binary search tree.  
@@ -184,8 +193,8 @@ Output: 3
 This method only works when the majority element does exist in the array. In the problem definition, it is said that the majority element may or may not exist but for applying this approach let’s assume that the majority element does exist in the given input array.
 
 #### Approach: This is a two-step process.
-    1. The first step gives the element that maybe the majority element in the array. If there is a majority element in an array, then this step will definitely return majority element, otherwise, it will return candidate for majority element.
-    2. Check if the element obtained from the above step is majority element. This step is necessary as there might be no majority element.
+1. The first step gives the element that maybe the majority element in the array. If there is a majority element in an array, then this step will definitely return majority element, otherwise, it will return candidate for majority element.
+2. Check if the element obtained from the above step is majority element. This step is necessary as there might be no majority element.
 
 ##### Step 1: Finding a Candidate
 The algorithm for the first phase that works in O(n) is known as Moore’s Voting Algorithm. Basic idea of the algorithm is that if each occurrence of an element e can be cancelled with all the other elements that are different from e then e will exist till end if it is a majority element.
@@ -194,12 +203,12 @@ The algorithm for the first phase that works in O(n) is known as Moore’s Votin
 Traverse through the array and check if the count of the element found is greater than half the size of the array, then print the answer else print “No majority element”.
 
 #### Algorithm:
-    *Loop through each element and maintains a count of majority element, and a majority index, maj_index
-    *If the next element is same then increment the count if the next element is not same then decrement the count.
-    *if the count reaches 0 then changes the maj_index to the current element and set the count again to 1.
-    *Now again traverse through the array and find the count of majority element found.
-    *If the count is greater than half the size of the array, print the element
-    *Else print that there is no majority element
+* Loop through each element and maintains a count of majority element, and a majority index, maj_index
+* If the next element is same then increment the count if the next element is not same then decrement the count.
+* if the count reaches 0 then changes the maj_index to the current element and set the count again to 1.
+* Now again traverse through the array and find the count of majority element found.
+* If the count is greater than half the size of the array, print the element
+* Else print that there is no majority element
 
 #### Implementation:
 
@@ -259,11 +268,11 @@ This method is somewhat similar to Moore voting algorithm in terms of time compl
 In Hashmap(key-value pair), at value, maintain a count for each element(key) and whenever the count is greater than half of the array length, return that key(majority element).
 
 #### Algorithm:
-    *Create a hashmap to store a key-value pair, i.e. element-frequency pair.
-    *Traverse the array from start to end.
-    *For every element in the array, insert the element in the hashmap if the element does not exist as key, else fetch the value of the key ( array[i] ) and increase the value by 1
-    *If the count is greater than half then print the majority element and break.
-    *If no majority element is found print “No Majority element”
+* Create a hashmap to store a key-value pair, i.e. element-frequency pair.
+* Traverse the array from start to end.
+* For every element in the array, insert the element in the hashmap if the element does not exist as key, else fetch the value of the key ( array[i] ) and increase the value by 1
+* If the count is greater than half then print the majority element and break.
+* If no majority element is found print “No Majority element”
 
 #### Implementation:
     # Python program for finding out majority  
@@ -309,12 +318,12 @@ In Hashmap(key-value pair), at value, maintain a count for each element(key) and
 The idea is to sort the array. Sorting makes similar elements in the array adjacent, so traverse the array and update the count until the present element is similar to the previous one. If the frequency is more than half the size of the array, print the majority element.
 
 #### Algorithm:
-    *Sort the array and create a varibale count and previous ,prev = INT_MIN.
-    *Traverse the element from start to end.
-    *If the current element is equal to the previous element increase the count.
-    *Else set the count to 1.
-    *If the count is greater than half the size of array, print the element as majority element and break.
-    *If no majority element found, print “No majority element”
+* Sort the array and create a varibale count and previous ,prev = INT_MIN.
+* Traverse the element from start to end.
+* If the current element is equal to the previous element increase the count.
+* Else set the count to 1.
+* If the count is greater than half the size of array, print the element as majority element and break.
+* If no majority element found, print “No majority element”
 
 #### Implementation:
     // C++ program to find Majority  
@@ -392,3 +401,54 @@ The idea is to sort the array. Sorting makes similar elements in the array adjac
     As no extra space is required.
 
 REF: https://www.geeksforgeeks.org/majority-element/
+
+## Method 6: Divide and Conquer
+
+#### Intuition
+If we know the majority element in the left and right halves of an array, we can determine which is the global majority element in linear time.
+
+#### Algorithm
+Here, we apply a classical divide & conquer approach that recurses on the left and right halves of an array until an answer can be trivially achieved for a length-1 array. Note that because actually passing copies of subarrays costs time and space, we instead pass lo and hi indices that describe the relevant slice of the overall array. In this case, the majority element for a length-1 slice is trivially its only element, so the recursion stops there. If the current slice is longer than length-1, we must combine the answers for the slice's left and right halves. If they agree on the majority element, then the majority element for the overall slice is obviously the same1. If they disagree, only one of them can be "right", so we need to count the occurrences of the left and right majority elements to determine which subslice's answer is globally correct. The overall answer for the array is thus the majority element between indices 0 and nn.
+
+#### Impelementation
+
+    class Solution:
+        def majorityElement(self, nums, lo=0, hi=None):
+            def majority_element_rec(lo, hi):
+                # base case; the only element in an array of size 1 is the majority
+                # element.
+                if lo == hi:
+                    return nums[lo]
+
+                # recurse on left and right halves of this slice.
+                mid = (hi-lo)//2 + lo
+                left = majority_element_rec(lo, mid)
+                right = majority_element_rec(mid+1, hi)
+
+                # if the two halves agree on the majority element, return it.
+                if left == right:
+                    return left
+
+                # otherwise, count each element and return the "winner".
+                left_count = sum(1 for i in range(lo, hi+1) if nums[i] == left)
+                right_count = sum(1 for i in range(lo, hi+1) if nums[i] == right)
+
+                return left if left_count > right_count else right
+
+            return majority_element_rec(0, len(nums)-1)
+
+#### Complexity Analysis
+
+    Time complexity : O(nlgn)O(nlgn)
+
+    Each recursive call to majority_element_rec performs two recursive calls on subslices of size n/2 and two linear scans of length nn. Therefore, the time complexity of the divide & conquer approach can be represented by the following recurrence relation:
+
+        T(n) = 2T(n/2) + 2n
+        T(n)=2T(2n)+2n
+
+    By the master theorem, the recurrence satisfies case 2, so the complexity can be analyzed as such:
+
+            T(n) = Θ(n^(logb-a)logn) = Θ(n^(log2-2)logn)
+            T(n) = Θ(nlogn)​
+
+REF: https://leetcode.com/articles/majority-element/
