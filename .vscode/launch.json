@@ -5,10 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "(gdb) Attach",
             "type": "cppdbg",
             "request": "attach",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "program": "/home/ngoya/Drive-Data/Git/Algorithmic Design and Techniques - Assignments/Week-5/MoneyChangeDP.py",
             "processId": "${command:pickProcess}",
             "MIMode": "gdb",
             "setupCommands": [
